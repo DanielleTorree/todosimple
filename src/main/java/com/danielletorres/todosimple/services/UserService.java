@@ -33,7 +33,7 @@ public class UserService {
 		user.setId(null);
 		
 		User obj = this.userRepository.save(user);		
-		this.taskRepository.saveAll(obj.getTasks());
+		// this.taskRepository.saveAll(obj.getTasks());
 		
 		return obj;
 	}
@@ -47,7 +47,7 @@ public class UserService {
 	}
 	
 	public void delete(Long id) {
-		// User user = findById(id);
+		findById(id);
 
 		try {
 			this.userRepository.deleteById(id);
